@@ -6,7 +6,7 @@ load_dotenv()
 
 
 class Settings:
-    HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
+    HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN") or os.environ.get("HUGGINGFACE_API_TOKEN")
     MODEL_PATH = os.getenv("MODEL_PATH", "./models/llama-7b")  # Default if not set
     OCR_LANGUAGE = os.getenv("OCR_LANGUAGE", "eng")
     EMAIL_DIRECTORY = "data/emails"
